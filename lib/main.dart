@@ -1,19 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
-}
-
-// randomColor function
-Color randomColor() {
-  return Color.fromARGB(
-    255,
-    Random().nextInt(256),
-    Random().nextInt(256),
-    Random().nextInt(256),
-  );
 }
 
 class MyApp extends StatefulWidget {
@@ -35,22 +23,35 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.blue,
           title: const Text('My First App!'),
         ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              count++;
-            });
+        body: Builder(
+          builder: (BuildContext context) {
+            return ElevatedButton(
+              child: const Text('Navigate'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => AboutScreen(),
+                  ),
+                );
+              },
+            );
           },
         ),
-        body: Center(
-          child: Text(
-            '$count',
-            style: const TextStyle(
-              fontSize: 100,
-            ),
-          ),
-        ),
+      ),
+    );
+  }
+}
+
+class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text('About Screen'),
       ),
     );
   }
