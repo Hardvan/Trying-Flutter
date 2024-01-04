@@ -1,7 +1,19 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+// randomColor function
+Color randomColor() {
+  return Color.fromARGB(
+    255,
+    Random().nextInt(256),
+    Random().nextInt(256),
+    Random().nextInt(256),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,40 +23,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text('My First App!'),
-        ),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            Container(
-              width: 420,
-              color: Colors.red,
-            ),
-            Container(
-              width: 420,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 420,
-              color: Colors.green,
-            ),
-            Container(
-              width: 420,
-              color: Colors.yellow,
-            ),
-            Container(
-              width: 420,
-              color: Colors.orange,
-            ),
-            Container(
-              width: 420,
-              color: Colors.purple,
-            ),
-          ],
-        ),
-      ),
+          appBar: AppBar(
+            backgroundColor: Colors.blue,
+            title: const Text('My First App!'),
+          ),
+          body: ListView.builder(
+            itemBuilder: (_, index) {
+              return Container(
+                color: randomColor(),
+                width: 500,
+                height: 500,
+              );
+            },
+          )),
     );
   }
 }
