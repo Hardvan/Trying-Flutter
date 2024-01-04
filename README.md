@@ -1,16 +1,19 @@
-# trying_flutter
+# Trying Flutter
 
-A new Flutter project.
+This project is a result of experimenting with Flutter based on a [YouTube tutorial](https://youtu.be/1xipg02Wu8s?si=djny2mjWuSmrprSc) by Fireship.
 
-## Getting Started
+## Steps Taken
 
-This project is a starting point for a Flutter application.
+1. **Material App**: Set up the basic MaterialApp structure for the Flutter project.
+2. **Container**: Utilized the Container widget for layout and styling within the Flutter app.
+3. **Flex Layout**: Implemented a flexible layout using the Flex widget.
+4. **Stack**: Explored the use of the Stack widget for positioning elements on top of each other.
+5. **Scaffold Magic**:: Leveraged the power of the Scaffold widget for creating the app's basic structure.
+6. **List View**:: Incorporated a ListView to display a scrollable list of items.
+7. **Builder**:: Used the Builder widget to obtain a new BuildContext for proper navigation.
+8. **Stateful Widget**:: Introduced a StatefulWidget to manage and update the app's state.
+9. **Navigator**:: Implemented navigation between screens using the Navigator widget.
 
-A few resources to get you started if this is your first Flutter project:
+## Code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The main code can be found in [`lib/main.dart`](./lib/main.dart)
