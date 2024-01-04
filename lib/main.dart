@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +14,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.blue,
           title: const Text('My First App!'),
+        ),
+        body: const Center(
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Text('Hello, World!'),
+          ),
         ),
       ),
     );
