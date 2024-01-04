@@ -16,26 +16,42 @@ Color randomColor() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // State
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            title: const Text('My First App!'),
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: const Text('My First App!'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              count++;
+            });
+          },
+        ),
+        body: Center(
+          child: Text(
+            '$count',
+            style: const TextStyle(
+              fontSize: 100,
+            ),
           ),
-          body: ListView.builder(
-            itemBuilder: (_, index) {
-              return Container(
-                color: randomColor(),
-                width: 500,
-                height: 500,
-              );
-            },
-          )),
+        ),
+      ),
     );
   }
 }
