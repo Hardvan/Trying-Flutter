@@ -15,21 +15,35 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           title: const Text('My First App!'),
         ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            print('You clicked me!');
-          },
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.business), label: 'Business'),
-            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
+        body: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Container(
+              width: 420,
+              color: Colors.red,
+            ),
+            Container(
+              width: 420,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 420,
+              color: Colors.green,
+            ),
+            Container(
+              width: 420,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: 420,
+              color: Colors.orange,
+            ),
+            Container(
+              width: 420,
+              color: Colors.purple,
+            ),
           ],
         ),
-        drawer: const Drawer(child: Text("Sup!")),
       ),
     );
   }
